@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Profile from '../views/Profile.vue'
-import ProfileDark from '../views/ProfileDark.vue'
+import Profile from '@/views/Profile.vue'
+import ProfileDark from '@/views/ProfileDark.vue'
 
 const routes = [
   {
