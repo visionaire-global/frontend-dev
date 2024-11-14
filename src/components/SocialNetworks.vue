@@ -20,13 +20,13 @@
 const props = defineProps({
   data: {
     type: Object,
-    default: {},
+    default: () => ({})
   },
   style: {
     type: Object,
-    default: {},
-  },
-});
+    default: () => ({})
+  }
+})
 </script>
 
 <style scoped>
