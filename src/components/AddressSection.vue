@@ -19,8 +19,8 @@ import { default } from './Divider.vue';
 
 <script setup>
 const props = defineProps({
-  data: { type: Object, default: {} },
-});
+  data: { type: Object, default: () => ({}) }
+})
 </script>
 
 <style scoped>

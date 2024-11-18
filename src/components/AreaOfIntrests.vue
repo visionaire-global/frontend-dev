@@ -3,10 +3,12 @@
     <h4>{{ data.title }}</h4>
     <p v-if="data.description">{{ data.description }}</p>
     <div class="intrest_wrapper">
-    <div class="intrest_container" v-if="data.intrests">
-      <span class="intrest" v-for="intrest of data.intrests">{{ intrest }}</span>
+      <div class="intrest_container" v-if="data.intrests">
+        <span class="intrest" v-for="(intrest, index) of data.intrests" :key="index">{{
+          intrest
+        }}</span>
+      </div>
     </div>
-  </div>
   </section>
 </template>
 
@@ -14,9 +16,9 @@
 const props = defineProps({
   data: {
     type: Object,
-    default: {},
-  },
-});
+    default: () => ({})
+  }
+})
 </script>
 
 <style scoped>
@@ -29,20 +31,20 @@ const props = defineProps({
 .section p {
   color: #666;
 }
-.intrest_wrapper{
+.intrest_wrapper {
   overflow: auto;
   padding-bottom: 10px;
 }
 .intrest_container {
   display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 472px;
-    flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: 472px;
+  flex-wrap: wrap;
 }
 .intrest_wrapper::-webkit-scrollbar {
   width: 0px;
-} 
+}
 .intrest {
   border: 1px solid;
   border-radius: 25px;

@@ -8,7 +8,7 @@ import { default } from './Divider.vue';
     <p>{{ data.description }}</p>
     <p v-if="data.subDivTitle">{{ data.subDivTitle }}</p>
     <ul v-if="data.subDivision">
-      <li v-for="division of data.subDivision">{{ division }}</li>
+      <li v-for="(division, index) of data.subDivision" :key="index">{{ division }}</li>
     </ul>
   </section>
 </template>
@@ -17,9 +17,9 @@ import { default } from './Divider.vue';
 const props = defineProps({
   data: {
     type: Object,
-    default: {},
-  },
-});
+    default: () => ({})
+  }
+})
 </script>
 
 <style scoped>

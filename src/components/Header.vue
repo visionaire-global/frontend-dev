@@ -15,12 +15,12 @@
 const props = defineProps({
   image: {
     type: String,
-    default: "",
+    default: ''
   },
   leftIcon: { type: String, default: null },
   rightIcon: { type: String, default: null },
-  style: { type: Object, default: "" },
-});
+  style: { type: Object, default: () => ({}) }
+})
 </script>
 
 <style scoped>
@@ -30,7 +30,8 @@ const props = defineProps({
   justify-content: space-between;
   padding: 10px;
 }
-.profile-pic,.settings-icon{
+.profile-pic,
+.settings-icon {
   font-size: 30px;
 }
 .profile-pic img {
